@@ -1,0 +1,16 @@
+<h1>User Listing</h1>
+
+<table>
+  <input type="text" placeholder="Search.." [(ngModel)]="searchText" name="search">
+  <tr>
+    <th>Name</th>
+    <th>User Name</th>
+    <th>Phone</th>
+  </tr>
+
+  <tr *ngFor="let user of users | filter : searchText">
+    <td [routerLink]="['/userdetails', user.id]">{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.phone}}</td>
+  </tr>
+</table>
